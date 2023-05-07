@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,6 +14,7 @@ import 'aos/dist/aos.css';
 
 
 export default function Home() {
+  const router = useRouter();
 
   useEffect(() => {
     AOS.init({duration: 1000})
@@ -39,7 +41,10 @@ export default function Home() {
             Welcome to $CAMRY - the cryptocurrency that will always be by your side. With 7% tax and a commitment to community, $CAMRY is the smart choice for savvy investors. 
             Join the fun and let's ride the meme wave together!
             </p>
-            <button className='BuyBtn mx-5'>
+
+           {/*Replace the link with your Uniswift link here to redirect the user there, the one between '' , and kepp the ''. DELETE THIS AFTER*/}
+
+            <button className='BuyBtn mx-5' onClick={() => window.location.replace('https://www.google.de/')}>
               <Image src={require('../public/icons/wallet.png')} width={20} alt='Camry walltet'/>
               Buy $Camry
             </button>
@@ -104,6 +109,7 @@ export default function Home() {
               <div className='contractCont'>
                 <span className='display-6 text-white mt-1'>Contract</span>
               </div>
+              {/*Replace the Contract Adress with a new one if you need (The white text only). DELETE THIS AFTER*/}
               <span className='text-white text-wrap'>0x0b0aBD7862613b1eCAf6f334046624a447C8B861</span>
               <Image src={require('../public/images/sitOnCoins.png')} alt='Camry coin' width={100} className='position-absolute start-0 top-0 translate-middle'/>
             </div>
@@ -123,8 +129,14 @@ export default function Home() {
         <Row>
           <Col className='d-flex flex-column justify-content-center align-items-center'>
             <h1 className='bigSubtitle'><span className='dollar'>$</span>CAMRY</h1>
-            <a className='XsmallSubtitle' href='#'>camry@info.hotmail.com</a>
-            <Image src={require('../public/icons/tweeter.png')} alt='Camry tweeter Icon' width={100}/>
+
+            {/*Replace the Email adress with your real Adress also in the href prop. DELETE THIS AFTER*/}
+
+            <a className='XsmallSubtitle' href='mailto:camry@info.hotmail.com'>camry@info.hotmail.com</a>
+
+            {/*Replace the link with your Uniswift link here to redirect the user there, the one between '' , and kepp the ''. DELETE THIS AFTER*/}
+
+            <Image onClick={() => window.location.replace('https://www.google.de/')} src={require('../public/icons/tweeter.png')} alt='Camry tweeter Icon' width={100}/>
           </Col>
         </Row>
       </Container>
